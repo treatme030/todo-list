@@ -11,15 +11,15 @@ const InputBox = styled.input`
 
 interface Props {
   readonly placeholder?: string;
-  readonly value?: string;
+  readonly defaultValue?: string;
   readonly onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const Input = ({ placeholder, onChange, value }: Props) => {
+export const Input = ({ placeholder, onChange, defaultValue }: Props) => {
   return (
     <InputBox 
     placeholder={placeholder} 
-    value={value}
+    defaultValue={defaultValue}
     onChange={onChange}
     />
   )

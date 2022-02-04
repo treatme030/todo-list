@@ -54,7 +54,7 @@ function App() {
   return (
     <Container>
       <Contents>
-        <ToDoListContainer>
+        <ToDoListContainer data-testid="toDoList">
           {toDoList.map((item, index) => (
             <ToDoItem 
             key={item}
@@ -66,8 +66,8 @@ function App() {
         <InputContainer>
           <Input 
           placeholder='할 일을 입력해 주세요' 
-          value={toDo}
-          onChange={(e) => setToDo(e.target.value)}
+          defaultValue={toDo}
+          onChange={(e) => setToDo(e.target.defaultValue)}
           />
           <Button 
           label="추가" 

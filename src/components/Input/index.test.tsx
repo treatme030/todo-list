@@ -6,7 +6,7 @@ import { Input } from './index';
 
 describe('<Input />', () => {
   it('renders component correctly', () => {
-    const { container } = render(<Input value="default value" />);
+    const { container } = render(<Input defaultValue="default value" />);
 
     const input = screen.getByDisplayValue('default value');
     expect(input).toBeInTheDocument();
@@ -25,5 +25,5 @@ describe('<Input />', () => {
     const input = screen.getByPlaceholderText('default placeholder') as HTMLInputElement;
     userEvent.type(input, 'study react');
     expect(input.value).toBe('study react');
-  })
+  });
 });
