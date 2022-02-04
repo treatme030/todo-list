@@ -18,7 +18,7 @@ const Label = styled.div`
 
 interface Props {
   readonly label: string;
-  readonly onDelete: () => void;
+  readonly onDelete?: () => void;
 }
 
 export const ToDoItem = ({ label, onDelete }: Props) => {
