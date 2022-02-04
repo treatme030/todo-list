@@ -39,7 +39,7 @@ describe('<App />', () => {
     userEvent.type(input, 'study react 2');
     userEvent.click(addBbutton);
 
-    const toDoItem2 = screen.getByText(/study react 2/i);
+    const toDoItem2 = screen.getByText('study react 2');
     expect(toDoItem2).toBeInTheDocument();
     expect(toDoList.childElementCount).toBe(2);
 

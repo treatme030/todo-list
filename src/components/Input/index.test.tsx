@@ -6,7 +6,7 @@ import { Input } from './index';
 
 describe('<Input />', () => {
   it('renders component correctly', () => {
-    const { container } = render(<Input defaultValue="default value" />);
+    const { container } = render(<Input value="default value" />);
 
     const input = screen.getByDisplayValue('default value');
     expect(input).toBeInTheDocument();

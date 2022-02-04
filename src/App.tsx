@@ -66,8 +66,8 @@ function App() {
         <InputContainer>
           <Input 
           placeholder='할 일을 입력해 주세요' 
-          defaultValue={toDo}
-          onChange={(e) => setToDo(e.target.defaultValue)}
+          value={toDo}
+          onChange={(e) => setToDo(e.target.value)}
           />
           <Button 
           label="추가" 
