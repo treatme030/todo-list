@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { ToDoItem } from 'components/ToDoItem';
+import { ToDoListContext } from 'contexts';
 
 const Container = styled.ul`
   min-width: 350px;
@@ -10,12 +11,8 @@ const Container = styled.ul`
   margin-bottom: 20px;
 `;
 
-interface Props {
-  readonly toDoList: string[];
-  readonly deleteToDo: (index: number) => void;
-}
-
-export const ToDoList = ({ toDoList, deleteToDo }: Props) => {
+export const ToDoList = () => {
+  const { toDoList, deleteToDo } = useContext(ToDoListContext);
   return (
     <Container data-testid="toDoList">
       {toDoList.map((item, index) => (
