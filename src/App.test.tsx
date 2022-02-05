@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event'
+import userEvent from '@testing-library/user-event';
+import "@testing-library/jest-dom/extend-expect";
 import 'jest-styled-components';
 import App from './App';
 
@@ -47,5 +48,14 @@ describe('<App />', () => {
     userEvent.click(deleteButtons[0]);
     expect(toDoItem).not.toBeInTheDocument();
     expect(toDoList.childElementCount).toBe(1);
+  });
+  it('does not add empty ToDo', () => {
+    render(<App />);
+
+    const toDoList = screen.getByTestId('toDoList');
+    const length = toDoList.childElementCount;
+    const addButton = screen.getByText('추가');
+    userEvent.click(addButton);
+    expect(toDoList.childElementCount).toBe(length);
   });
 });
