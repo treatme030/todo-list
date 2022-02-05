@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { InputContainer, ToDoItem } from 'components';
+import { InputContainer, ToDoList } from 'components';
 
 const Container = styled.div`
   min-height: 100vh;
@@ -17,14 +17,6 @@ const Contents =styled.div`
   padding: 20px;
   border-radius: 8px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-`;
-
-const ToDoListContainer = styled.ul`
-  min-width: 350px;
-  height: 400px;
-  overflow-y: scroll;
-  border: 1px solid #bdbdbd;
-  margin-bottom: 20px;
 `;
 
 function App() {
@@ -50,15 +42,10 @@ function App() {
   return (
     <Container>
       <Contents>
-        <ToDoListContainer data-testid="toDoList">
-          {toDoList.map((item, index) => (
-            <ToDoItem 
-            key={item}
-            label={item}
-            onDelete={() => deleteToDo(index)}
-            />
-          ))}
-        </ToDoListContainer>
+        <ToDoList 
+        toDoList={toDoList}
+        deleteToDo={deleteToDo}
+        />
         <InputContainer 
         toDo={toDo}
         onChange={(e) => setToDo(e.target.value)}
