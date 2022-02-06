@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import { ToDoListProvider } from 'contexts';
-import { List, Add, Detail } from 'pages';
+import { List, Add, Detail, NotFound } from 'pages';
 import { PageHeader } from 'components';
 
 const Container = styled.div`
@@ -23,6 +23,7 @@ function App() {
           <Route exact path="/" component={List} />
           <Route exact path="/add" component={Add} />
           <Route exact path="/detail/:id" component={Detail} />
+          <Route component={NotFound} />
         </Switch>
       </Container>
     </ToDoListProvider>
