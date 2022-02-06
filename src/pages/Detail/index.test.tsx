@@ -36,7 +36,7 @@ describe('<Detail />', () => {
     history.push('/detail/0');
     localStorage.setItem('ToDoList', '["ToDo 1"]');
 
-    const TestComponent = () => {
+    const TestComponent = (): JSX.Element => {
       const { pathname } = useLocation();
       return (
         <div>{pathname}</div>
