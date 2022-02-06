@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import { ToDoListProvider } from 'contexts';
-import { List } from 'pages';
+import { List, Add } from 'pages';
 
 const Container = styled.div`
   min-height: 100vh;
@@ -18,9 +18,8 @@ function App() {
     <ToDoListProvider>
       <Container>
         <Switch>
-          <Route exact path="/">
-            <List />
-          </Route>
+          <Route exact path="/" component={List} />
+          <Route exact path="/add" component={Add} />
         </Switch>
       </Container>
     </ToDoListProvider>
