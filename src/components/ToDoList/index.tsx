@@ -18,6 +18,7 @@ export const ToDoList = () => {
       {toDoList.map((item, index) => (
         <ToDoItem 
         key={item}
+        id={index}
         label={item}
         onDelete={() => deleteToDo(index)}
         />
