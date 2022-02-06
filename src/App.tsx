@@ -1,4 +1,5 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import { InputContainer, ToDoList } from 'components';
 import { ToDoListProvider } from 'contexts';
@@ -25,10 +26,14 @@ function App() {
   return (
     <ToDoListProvider>
       <Container>
-        <Contents>
-          <ToDoList />
-          <InputContainer />
-        </Contents>
+        <Switch>
+          <Route exact path="/">
+            <Contents>
+              <ToDoList />
+              <InputContainer />
+            </Contents>
+          </Route>
+        </Switch>
       </Container>
     </ToDoListProvider>
   );
