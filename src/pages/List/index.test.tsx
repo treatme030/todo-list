@@ -59,7 +59,7 @@ describe('<List />', () => {
 
     userEvent.click(deleteButtons[1]);
     expect(toDoItem).not.toBeInTheDocument();
-    expect(JSON.parse(localStorage.getItem('ToDoList') as string)).not.toContain('ToDo 2');
+    expect(localStorage.getItem('ToDoList')).toBe('["ToDo 1","ToDo 3"]');
   });
   it('moves to detail page', () => {
     const history = createMemoryHistory();
